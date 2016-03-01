@@ -1,0 +1,43 @@
+{
+  "name": "node-prebuilt-starter",
+  "version": "0.0.0",
+  "description": "Starter prebuilt Node native package.",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "jasmine-node --captureExceptions spec",
+    "rebuild": "node-pre-gyp rebuild",
+    "install": "node-pre-gyp install --fallback-to-build",
+    "prepublish": "node tools/prepublish.js"
+  },
+  "files": [
+    "binding.gyp",
+    "build/node-prebuilt-starter",
+    "lib",
+    "src"
+  ],
+  "keywords": [
+  ],
+  "author": "Hanson Wang (hanson.wng@gmail.com)",
+  "repository": "https://github.com/hansonw/node-prebuilt-starter",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.0.0",
+    "node-pre-gyp": "^0.6.5",
+    "pre-binding": "^1.0.0",
+    "semver": "^5.0.0"
+  },
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
+  "devDependencies": {
+    "jasmine-node": "^1.14.5",
+    "rimraf": "^2.5.2"
+  },
+  "binary": {
+    "module_name": "node-prebuilt-starter",
+    "module_path": "./build/{module_name}/v{version}/{node_abi}-{platform}-{arch}/",
+    "host": "https://github.com/",
+    "remote_path": "./hansonw/{module_name}/releases/download/v{version}/",
+    "package_name": "{node_abi}-{platform}-{arch}.tar.gz"
+  }
+}
