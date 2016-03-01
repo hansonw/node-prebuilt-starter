@@ -7,3 +7,10 @@ describe('test', function() {
     expect(main.test()).toBe('hello world');
   });
 });
+
+describe('TestObject', function() {
+  it('returns hello world', function() {
+    var obj = new main.TestObject();
+    expect(obj.test()).toBe('hello world');
+  });
+});
